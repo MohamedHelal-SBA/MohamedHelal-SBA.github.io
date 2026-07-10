@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta_title">Pr. Mohamed Helal — Mathématiques &amp; Biomathématiques</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Page personnelle du Pr. Mohamed Helal, Professeur des Universités, Département de Mathématiques, Université Djillali Liabès de Sidi Bel Abbès.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f2eb;
+  --paper-2:#eeece2;
+  --ink:#1c2431;
+  --ink-soft:#54607a;
+  --teal:#3f7566;
+  --teal-deep:#2c5449;
+  --gold:#c1893e;
+  --line:#d9d5c6;
+  --card:#fffefb;
+  --shadow: 0 1px 0 rgba(28,36,49,.04);
+  --maxw: 1080px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', system-ui, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{ background:var(--teal); color:#fff; }
+
+a{ color:var(--teal-deep); }
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--teal-deep);
+  outline-offset:3px;
+}
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+/* ---------- NAV ---------- */
+header.site{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,242,235,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.navrow{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 28px; max-width:var(--maxw); margin:0 auto;
+  gap:16px;
+}
+.brand{
+  font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+  letter-spacing:.01em; color:var(--ink); text-decoration:none;
+}
+.brand small{ display:block; font-family:'JetBrains Mono', monospace; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:400; margin-top:2px;}
+.nav-right{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+nav.links{ display:flex; gap:22px; flex-wrap:wrap; }
+nav.links a{
+  font-size:.82rem; text-decoration:none; color:var(--ink-soft);
+  font-weight:500; letter-spacing:.01em;
+  border-bottom:1px solid transparent; padding-bottom:2px;
+  transition:color .15s, border-color .15s;
+}
+nav.links a:hover{ color:var(--teal-deep); border-color:var(--teal-deep); }
+
+.lang-switch{
+  display:flex; align-items:center; border:1px solid var(--line);
+  border-radius:20px; overflow:hidden; flex-shrink:0;
+  font-family:'JetBrains Mono', monospace;
+}
+.lang-switch button{
+  border:none; background:transparent; cursor:pointer;
+  font-family:inherit; font-size:.72rem; font-weight:500; letter-spacing:.06em;
+  padding:6px 13px; color:var(--ink-soft); transition:background .15s, color .15s;
+}
+.lang-switch button.active{ background:var(--teal-deep); color:#fff; }
+.lang-switch button:not(.active):hover{ color:var(--ink); }
+
+@media (max-width:760px){
+  nav.links{ display:none; }
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative; overflow:hidden;
+  padding:86px 0 70px;
+  border-bottom:1px solid var(--line);
+}
+.hero .wrap{ position:relative; z-index:2; }
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:.72rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--teal-deep);
+  margin:0 0 18px;
+}
+h1.name{
+  font-family:'Fraunces', serif; font-weight:600; font-optical-sizing:auto;
+  font-size:clamp(2.6rem, 6vw, 4.6rem); line-height:1.02; letter-spacing:-.01em;
+  margin:0 0 14px; color:var(--ink);
+}
+.hero-role{
+  font-size:1.08rem; color:var(--ink-soft); max-width:640px; margin:0 0 28px;
+}
+.hero-role strong{ color:var(--ink); font-weight:600; }
+.hero-thesis{
+  font-family:'Fraunces', serif; font-weight:400; font-style:italic;
+  font-size:clamp(1.15rem, 2vw, 1.5rem); color:var(--teal-deep);
+  max-width:680px; line-height:1.4; margin:0 0 34px;
+}
+.hero-meta{ display:flex; flex-wrap:wrap; gap:10px 26px; font-family:'JetBrains Mono', monospace; font-size:.78rem; color:var(--ink-soft); }
+.hero-meta span{ display:inline-flex; align-items:center; gap:8px; }
+.hero-meta a{ color:var(--ink-soft); }
+
+.curve-wrap{
+  position:absolute; right:-40px; top:0; bottom:0; width:52%; z-index:1;
+  opacity:.9; pointer-events:none;
+}
+.curve-wrap svg{ width:100%; height:100%; }
+.trace{
+  fill:none; stroke:var(--teal); stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-dasharray:1400; stroke-dashoffset:1400;
+  animation:draw 2.6s ease-out forwards .2s;
+}
+.trace.two{ stroke:var(--gold); stroke-width:1.2; opacity:.75; animation-delay:.5s; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+.dot-eq{ fill:var(--teal-deep); opacity:0; animation:fadein .6s ease forwards 2.4s; }
+@keyframes fadein{ to{ opacity:1; } }
+
+@media (max-width:760px){
+  .curve-wrap{ display:none; }
+}
+
+/* ---------- divider curve ---------- */
+.divider{ width:100%; height:34px; display:block; margin:0 auto; }
+.divider path{ fill:none; stroke:var(--line); stroke-width:1.4; }
+.divider path.accent{ stroke:var(--teal); opacity:.55; }
+
+/* ---------- SECTIONS ---------- */
+section{ padding:64px 0; }
+section + section{ border-top:1px solid var(--line); }
+.section-head{ margin-bottom:34px; }
+.kicker{
+  font-family:'JetBrains Mono', monospace; font-size:.72rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--teal-deep);
+  margin:0 0 8px;
+}
+h2{
+  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(1.7rem,3vw,2.3rem);
+  margin:0; letter-spacing:-.01em; color:var(--ink);
+}
+.lede{ max-width:700px; color:var(--ink-soft); margin-top:12px; font-size:1rem;}
+
+/* About */
+.about-grid{ display:grid; grid-template-columns: 1.3fr .9fr; gap:52px; }
+@media (max-width:820px){ .about-grid{ grid-template-columns:1fr; } }
+.about-grid p{ margin:0 0 16px; color:var(--ink-soft); }
+.about-grid p strong{ color:var(--ink); font-weight:600;}
+.fields{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0; }
+.fields li{
+  padding:12px 0; border-bottom:1px solid var(--line);
+  font-family:'Fraunces', serif; font-size:1.02rem; color:var(--ink);
+}
+.fields li:first-child{ padding-top:0; }
+.langs{ margin-top:26px; }
+.langs .kicker{ margin-bottom:10px; }
+.lang-row{ display:flex; gap:10px; flex-wrap:wrap; }
+.pill{
+  font-family:'JetBrains Mono', monospace; font-size:.74rem;
+  border:1px solid var(--line); border-radius:20px; padding:5px 13px;
+  color:var(--ink-soft);
+}
+
+/* Timeline */
+.timeline{ position:relative; margin-top:10px; padding-left:26px; border-left:1.5px solid var(--line); }
+.tl-item{ position:relative; padding:0 0 30px 26px; }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-item::before{
+  content:''; position:absolute; left:-33.5px; top:5px;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--paper); border:2px solid var(--teal-deep);
+}
+.tl-year{ font-family:'JetBrains Mono', monospace; font-size:.78rem; color:var(--teal-deep); font-weight:500; }
+.tl-title{ font-family:'Fraunces', serif; font-size:1.14rem; font-weight:500; margin:3px 0 4px; color:var(--ink); }
+.tl-sub{ color:var(--ink-soft); font-size:.92rem; }
+
+.timeline-cols{ display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:10px;}
+@media (max-width:820px){ .timeline-cols{ grid-template-columns:1fr; gap:10px; } }
+.tl-heading{ font-family:'JetBrains Mono', monospace; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px;}
+
+/* Projects */
+.proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:10px;}
+@media (max-width:700px){ .proj-grid{ grid-template-columns:1fr; } }
+.proj-card{
+  background:var(--card); border:1px solid var(--line); border-radius:4px;
+  padding:20px 22px; box-shadow:var(--shadow);
+}
+.proj-card .tl-year{ display:block; margin-bottom:6px;}
+.proj-card h3{ font-family:'Fraunces', serif; font-size:1.06rem; font-weight:500; margin:0 0 6px; color:var(--ink);}
+.proj-card p{ margin:0; color:var(--ink-soft); font-size:.92rem;}
+
+/* Publications */
+.pub-controls{
+  display:flex; gap:12px; align-items:center; margin-bottom:26px; flex-wrap:wrap;
+}
+.pub-search{
+  flex:1; min-width:220px;
+  font-family:'JetBrains Mono', monospace; font-size:.85rem;
+  padding:11px 16px; border:1px solid var(--line); border-radius:3px;
+  background:var(--card); color:var(--ink);
+}
+.pub-count{ font-family:'JetBrains Mono', monospace; font-size:.76rem; color:var(--ink-soft); white-space:nowrap;}
+.pub-year-group{ margin-bottom:8px; }
+.pub-year-label{
+  font-family:'JetBrains Mono', monospace; font-size:.82rem; font-weight:500;
+  color:var(--teal-deep); padding:16px 0 8px; position:sticky; top:60px;
+  background:var(--paper);
+}
+.pub-item{
+  padding:14px 0; border-bottom:1px solid var(--line);
+  display:grid; grid-template-columns:1fr; gap:4px;
+}
+.pub-item .pt{ font-size:.98rem; color:var(--ink); line-height:1.5; }
+.pub-item .pt .py{ font-family:'JetBrains Mono', monospace; font-size:.72rem; color:var(--gold); margin-right:8px; border:1px solid var(--line); border-radius:3px; padding:1px 6px; }
+.pub-item .pa{ font-size:.87rem; color:var(--ink-soft); }
+.pub-item .pj{ font-family:'JetBrains Mono', monospace; font-size:.78rem; color:var(--teal-deep); }
+.pub-item .pj a{ color:var(--teal-deep); }
+.pub-item.hidden{ display:none; }
+.proc-note{ margin-top:30px; padding-top:22px; border-top:1px dashed var(--line); color:var(--ink-soft); font-size:.88rem;}
+
+/* Supervision + Responsibilities */
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:52px;}
+@media (max-width:820px){ .two-col{ grid-template-columns:1fr; } }
+.list-clean{ list-style:none; margin:0; padding:0;}
+.list-clean li{ padding:12px 0; border-bottom:1px solid var(--line); }
+.list-clean .lc-top{ font-family:'JetBrains Mono', monospace; font-size:.74rem; color:var(--ink-soft); margin-bottom:3px;}
+.list-clean .lc-main{ color:var(--ink); font-size:.95rem;}
+
+/* Conferences */
+.conf-list{ list-style:none; margin:0; padding:0; columns: 2; column-gap:48px; }
+@media (max-width:820px){ .conf-list{ columns:1; } }
+.conf-item{ break-inside:avoid; padding:0 0 20px; }
+.conf-loc{ font-family:'JetBrains Mono', monospace; font-size:.72rem; color:var(--teal-deep); }
+.conf-title{ font-size:.92rem; color:var(--ink); margin-top:3px; line-height:1.45;}
+
+/* Teaching */
+.teach-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; margin-top:6px;}
+@media (max-width:820px){ .teach-grid{ grid-template-columns:1fr; } }
+.tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+.tag{
+  font-size:.82rem; padding:6px 13px; border-radius:20px;
+  background:var(--paper-2); border:1px solid var(--line); color:var(--ink-soft);
+}
+
+/* Reviewer */
+.rev-row{ display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:6px;}
+.rev-row span{ font-size:.92rem; color:var(--ink-soft); position:relative; padding-left:14px;}
+.rev-row span::before{ content:'—'; position:absolute; left:0; color:var(--gold); }
+
+/* Contact / footer */
+footer.site{ padding:60px 0 40px; }
+.contact-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:52px; align-items:start;}
+@media (max-width:820px){ .contact-grid{ grid-template-columns:1fr; } }
+.contact-card{
+  background:var(--card); border:1px solid var(--line); border-radius:4px; padding:26px 28px;
+}
+.contact-card dl{ margin:0; }
+.contact-card dt{ font-family:'JetBrains Mono', monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft); margin-top:16px;}
+.contact-card dt:first-child{ margin-top:0; }
+.contact-card dd{ margin:4px 0 0; font-size:.98rem; color:var(--ink); }
+.contact-card dd a{ text-decoration:none; }
+.contact-card dd a:hover{ text-decoration:underline; }
+.footer-note{ color:var(--ink-soft); font-size:.85rem; margin-top:30px; }
+.updated{ font-family:'JetBrains Mono', monospace; font-size:.72rem; color:var(--ink-soft); margin-top:8px;}
+
+.reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navrow">
+    <a class="brand" href="#top">Mohamed Helal
+      <small data-i18n="brand_sub">Département de Mathématiques · USBA</small>
+    </a>
+    <div class="nav-right">
+      <nav class="links">
+        <a href="#about" data-i18n="nav_about">Profil</a>
+        <a href="#parcours" data-i18n="nav_parcours">Parcours</a>
+        <a href="#recherche" data-i18n="nav_recherche">Recherche</a>
+        <a href="#publications" data-i18n="nav_pub">Publications</a>
+        <a href="#encadrement" data-i18n="nav_encadrement">Encadrement</a>
+        <a href="#responsabilites" data-i18n="nav_resp">Responsabilités</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" id="btnFr" class="active" onclick="setLang('fr')">FR</button>
+        <button type="button" id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="curve-wrap" aria-hidden="true">
+      <svg viewBox="0 0 600 700" preserveAspectRatio="xMidYMid meet">
+        <!-- damped spiral trajectory approaching an equilibrium point: a nod to stability analysis -->
+        <path class="trace" d="M 560 90
+          C 560 220, 420 210, 400 320
+          C 385 405, 470 430, 480 340
+          C 486 285, 430 275, 425 330
+          C 421 372, 458 380, 460 345
+          C 461 322, 438 320, 437 342
+          C 436 356, 452 358, 450 344" />
+        <path class="trace two" d="M 40 620
+          C 140 560, 200 640, 300 560
+          C 380 495, 340 430, 420 400
+          C 470 381, 452 350, 450 344" />
+        <circle class="dot-eq" cx="450" cy="344" r="4.5" />
+      </svg>
+    </div>
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="hero_eyebrow">Page personnelle — Enseignant-chercheur</p>
+      <h1 class="name">Pr. Mohamed Helal</h1>
+      <p class="hero-role" data-i18n="hero_role"><strong>Professeur des Universités</strong> en mathématiques — Faculté des Sciences Exactes, Université Djillali Liabès de Sidi Bel Abbès, Algérie.</p>
+      <p class="hero-thesis" data-i18n="hero_thesis">« Comprendre le vivant à travers le langage des équations différentielles, des systèmes impulsifs et des modèles à retard. »</p>
+      <div class="hero-meta">
+        <span data-i18n="hero_loc">📍 Sidi Bel Abbès, Algérie</span>
+        <span>✉️ <a href="mailto:mhelal_abbes@yahoo.fr">mhelal_abbes@yahoo.fr</a></span>
+        <span>☎ +213 540 259 306</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k01">01 — Profil</p>
+        <h2 data-i18n="about_h2">Analyse non linéaire &amp; biomathématiques</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p data-i18n="about_p1">Le Pr. <strong>Mohamed Helal</strong> est Professeur des Universités au Département de Mathématiques de l'Université Djillali Liabès de Sidi Bel Abbès, où il enseigne et encadre la recherche depuis 2007. Ses travaux portent sur l'<strong>analyse qualitative des équations différentielles</strong> — ordinaires, fonctionnelles, fractionnaires et impulsives — appliquée aux phénomènes du vivant : dynamique des populations, épidémiologie, leucémie, maladie d'Alzheimer et interactions cultures-ravageurs.</p>
+          <p data-i18n="about_p2">Titulaire d'un doctorat (2013) et d'une habilitation universitaire (2015) de l'Université de Sidi Bel Abbès, il a dirigé le <strong>Laboratoire de Biomathématiques</strong> de 2016 à 2022 et a encadré trois thèses de doctorat consacrées à la modélisation mathématique en biologie et en médecine.</p>
+          <p data-i18n="about_p3">Auteur de plus d'une trentaine d'articles dans des revues internationales à comité de lecture et de nombreuses communications dans des congrès en Europe, en Afrique du Nord et en Turquie, il est également relecteur pour plusieurs revues scientifiques internationales.</p>
+        </div>
+        <div class="reveal">
+          <p class="kicker" style="margin-bottom:14px;" data-i18n="fields_kicker">Domaines de recherche</p>
+          <ul class="fields">
+            <li data-i18n="field1">Équations différentielles non linéaires (EDO, EDP)</li>
+            <li data-i18n="field2">Équations à retard &amp; systèmes impulsifs</li>
+            <li data-i18n="field3">Dérivées d'ordre fractionnaire</li>
+            <li data-i18n="field4">Systèmes dynamiques &amp; bifurcation</li>
+            <li data-i18n="field5">Problèmes aux limites</li>
+            <li data-i18n="field6">Biomathématiques &amp; dynamique des populations</li>
+          </ul>
+          <div class="langs">
+            <p class="kicker" data-i18n="langs_kicker">Langues</p>
+            <div class="lang-row">
+              <span class="pill" data-i18n="lang_ar">Arabe</span>
+              <span class="pill" data-i18n="lang_fr">Français</span>
+              <span class="pill" data-i18n="lang_en">Anglais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 17 C 180 2, 320 32, 500 17 S 820 2, 1080 17" /></svg>
+
+  <!-- ============ PARCOURS (education + positions) ============ -->
+  <section id="parcours">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k02">02 — Parcours</p>
+        <h2 data-i18n="parcours_h2">Formation &amp; fonctions</h2>
+        <p class="lede" data-i18n="parcours_lede">Un cheminement académique continu au sein de l'Université Djillali Liabès, de la licence à la chaire de professeur.</p>
+      </div>
+      <div class="timeline-cols reveal">
+        <div>
+          <p class="tl-heading" data-i18n="formation_heading">Formation</p>
+          <div class="timeline">
+            <div class="tl-item">
+              <span class="tl-year">2015</span>
+              <div class="tl-title" data-i18n="edu1_title">Habilitation universitaire</div>
+              <div class="tl-sub" data-i18n="edu1_sub">Université de Sidi Bel Abbès</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2013</span>
+              <div class="tl-title" data-i18n="edu2_title">Doctorat en mathématiques</div>
+              <div class="tl-sub" data-i18n="edu2_sub">« Contributions aux équations et inclusions différentielles et applications à des problèmes issus de la biologie cellulaire » — option analyse non linéaire</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2003</span>
+              <div class="tl-title" data-i18n="edu3_title">Magister en mathématiques</div>
+              <div class="tl-sub" data-i18n="edu3_sub">« Sur la moyennisation dans les équations différentielles ordinaires et fonctionnelles » — option modélisation mathématique</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2001</span>
+              <div class="tl-title" data-i18n="edu4_title">Diplôme d'études supérieures (D.E.S.)</div>
+              <div class="tl-sub" data-i18n="edu4_sub">Mathématiques, option probabilités et statistiques</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">1997</span>
+              <div class="tl-title" data-i18n="edu5_title">Baccalauréat</div>
+              <div class="tl-sub" data-i18n="edu5_sub">Option sciences exactes</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="tl-heading" data-i18n="fonctions_heading">Fonctions académiques</p>
+          <div class="timeline">
+            <div class="tl-item">
+              <span class="tl-year" data-i18n="pos1_year">2020 — présent</span>
+              <div class="tl-title" data-i18n="pos1_title">Professeur des Universités</div>
+              <div class="tl-sub">Faculté des Sciences Exactes, USBA</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2015 — 2020</span>
+              <div class="tl-title" data-i18n="pos2_title">Maître de conférences A</div>
+              <div class="tl-sub">Faculté des Sciences Exactes, USBA</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2013 — 2015</span>
+              <div class="tl-title" data-i18n="pos3_title">Maître assistant chargé de cours</div>
+              <div class="tl-sub">Faculté des Sciences Exactes, USBA</div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2007 — 2013</span>
+              <div class="tl-title" data-i18n="pos4_title">Maître assistant</div>
+              <div class="tl-sub">Faculté des Sciences Exactes, USBA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path class="accent" d="M0 17 C 180 32, 320 2, 500 17 S 820 32, 1080 17" /></svg>
+
+  <!-- ============ RECHERCHE / PROJETS ============ -->
+  <section id="recherche">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k03">03 — Recherche</p>
+        <h2 data-i18n="recherche_h2">Projets de recherche</h2>
+      </div>
+      <div class="proj-grid reveal">
+        <div class="proj-card">
+          <span class="tl-year" data-i18n="proj1_tag">2022 — 2025 · PRFU</span>
+          <h3 data-i18n="proj1_title">Modélisation et analyse mathématique des systèmes dynamiques en épidémiologie</h3>
+          <p data-i18n="proj1_desc">Projet de recherche et de formation universitaire.</p>
+        </div>
+        <div class="proj-card">
+          <span class="tl-year" data-i18n="proj2_tag">2020 — 2022 · PHC Tassili</span>
+          <h3 data-i18n="proj2_title">Dynamique des insectes ravageurs dans le bassin méditerranéen</h3>
+          <p data-i18n="proj2_desc">Coopération internationale franco-algérienne.</p>
+        </div>
+        <div class="proj-card">
+          <span class="tl-year" data-i18n="proj3_tag">2018 — 2021 · PRFU</span>
+          <h3 data-i18n="proj3_title">Modèles mathématiques des phénomènes du vivant</h3>
+          <p data-i18n="proj3_desc">Projet de recherche et de formation universitaire.</p>
+        </div>
+        <div class="proj-card">
+          <span class="tl-year" data-i18n="proj4_tag">2015 — 2017 · Projet européen</span>
+          <h3 data-i18n="proj4_title">PAMELA — Prion et Alzheimer : modélisation et expérimentation d'une liaison agressive</h3>
+          <p data-i18n="proj4_desc">Coopération de recherche européenne.</p>
+        </div>
+        <div class="proj-card">
+          <span class="tl-year" data-i18n="proj5_tag">2014 — 2017 · CNEPRU</span>
+          <h3 data-i18n="proj5_title">Modélisation mathématique et simulations numériques des phénomènes des sciences de la vie</h3>
+          <p data-i18n="proj5_desc">Projet de recherche universitaire.</p>
+        </div>
+        <div class="proj-card">
+          <span class="tl-year" data-i18n="proj6_tag">2011 — 2013 · PNR</span>
+          <h3 data-i18n="proj6_title">Modélisation et simulation de la maladie à prion</h3>
+          <p data-i18n="proj6_desc">Projet de recherche national.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 17 C 180 2, 320 32, 500 17 S 820 2, 1080 17" /></svg>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k04">04 — Bibliographie</p>
+        <h2 data-i18n="pub_h2">Publications</h2>
+        <p class="lede" data-i18n="pub_lede">34 articles de revues et 6 actes de conférence, de 2012 à 2026. Champ de recherche : « Search Bibliography » — utilisez le filtre ci-dessous comme le feraient vos propres étudiants.</p>
+      </div>
+
+      <div class="pub-controls reveal">
+        <input class="pub-search" id="pubSearch" type="text" data-i18n-attr="placeholder" data-i18n="pub_search_ph" placeholder="Filtrer par mot-clé, auteur, revue ou année…" aria-label="Filtrer les publications">
+        <span class="pub-count" id="pubCount"></span>
+      </div>
+
+      <div id="pubList" class="reveal">
+        <!-- Publications injected/grouped via markup below -->
+      </div>
+
+      <div class="proc-note reveal" id="procNote">
+        <strong style="color:var(--ink); font-family:'JetBrains Mono',monospace; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em;" data-i18n="proc_heading">Actes de conférence — ITM Web of Conferences, vol. 4 (2015)</strong>
+        <ul class="list-clean" id="procList" style="margin-top:10px;"></ul>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path class="accent" d="M0 17 C 180 32, 320 2, 500 17 S 820 32, 1080 17" /></svg>
+
+  <!-- ============ ENCADREMENT + COMMUNICATIONS ============ -->
+  <section id="encadrement">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k05">05 — Encadrement doctoral</p>
+        <h2 data-i18n="theses_h2">Thèses dirigées</h2>
+      </div>
+      <div class="two-col reveal">
+        <ul class="list-clean">
+          <li>
+            <div class="lc-top" data-i18n="thesis1_top">2022 · Université de Sidi Bel Abbès</div>
+            <div class="lc-main" data-i18n="thesis1_main"><strong>Yazid Bensid</strong> — Modèles mathématiques en biologie et médecine.</div>
+          </li>
+          <li>
+            <div class="lc-top" data-i18n="thesis2_top">2022 · Université de Sidi Bel Abbès</div>
+            <div class="lc-main" data-i18n="thesis2_main"><strong>Youcef Belgaid</strong> — Contributions à l'étude de certains modèles mathématiques issus de la biologie et de la médecine.</div>
+          </li>
+          <li>
+            <div class="lc-top" data-i18n="thesis3_top">2021 · Université de Sidi Bel Abbès</div>
+            <div class="lc-main" data-i18n="thesis3_main"><strong>Nawal Kherbouche</strong> — Contribution à certains modèles mathématiques de la dynamique de populations.</div>
+          </li>
+        </ul>
+        <div>
+          <p class="tl-heading" data-i18n="events_heading">Organisation d'événements scientifiques</p>
+          <ul class="list-clean">
+            <li>
+              <div class="lc-top" data-i18n="event1_top">25–27 juin 2023 · Sidi Bel Abbès</div>
+              <div class="lc-main" data-i18n="event1_main">Président du comité d'organisation — <em>International Biomathematic Modeling Days</em>.</div>
+            </li>
+            <li>
+              <div class="lc-top" data-i18n="event2_top">8 décembre 2022 · Sidi Bel Abbès</div>
+              <div class="lc-main" data-i18n="event2_main">Membre du comité d'organisation — Journée scientifique sur la biomathématique.</div>
+            </li>
+            <li>
+              <div class="lc-top" data-i18n="event3_top">14–16 septembre 2014 · Sidi Bel Abbès</div>
+              <div class="lc-main" data-i18n="event3_main">Membre du comité d'organisation — <em>Workshop on Mathematics for Life Sciences</em>.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-head reveal" style="margin-top:56px;">
+        <p class="kicker" data-i18n="comm_kicker">Communications</p>
+        <h2 style="font-size:1.5rem;" data-i18n="comm_h2">Colloques &amp; conférences internationales</h2>
+        <p class="lede" data-i18n="comm_lede">Plus de 25 communications orales et affichées, 2012 – 2023.</p>
+      </div>
+      <ul class="conf-list reveal">
+        <li class="conf-item"><div class="conf-loc" data-i18n="c1loc">Déc. 2023 · Sousse, Tunisie — ICAAM2023</div><div class="conf-title">A dynamic model of chronic myeloid leukemia under treatment.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c2loc">Août 2023 · Paris, France — MICOPAM2023</div><div class="conf-title">Mathematical analysis for a time delay model of Alzheimer's disease.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c3loc">Déc. 2022 · Hammamet, Tunisie</div><div class="conf-title" data-i18n="c3title">Dynamic behaviour for a delay leukemia model under treatment. (poster)</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c4loc">Sept. 2022 · Konya, Turquie — ICIAS2022</div><div class="conf-title">A mathematical model with a time-delayed under treatment of chronic myeloid leukemia.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c5loc">Juil. 2022 · Konya, Turquie — ICAENS2022</div><div class="conf-title">An impulse effects for chemotherapeutic treatment model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c6loc">Juin 2022 · Turin, Italie — MPDEE2022</div><div class="conf-title">A mathematical study of a crop-pest model with fractional-order derivative.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c7loc">Mai 2022 · Konya, Turquie — ICEANS2022</div><div class="conf-title">A mathematical study of a crop-pest model with the Caputo fractional-order derivative.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c8loc">Fév. 2021 · Trento, Italie — DSABNS2021</div><div class="conf-title" data-i18n="c8title">Mathematical analysis for a time-delayed leukemia model with treatment. (poster)</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c9loc">Déc. 2019 · Meknès, Maroc — CIMAN2019</div><div class="conf-title">A leukemia delay model with treatment.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c10loc">Fév. 2019 · Tlemcen, Algérie — Colloque TAMTAM</div><div class="conf-title" data-i18n="c10title">L'existence et la stabilité des états d'équilibres pour un modèle de la leucémie sous traitement et avec retard.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c11loc">Fév. 2019 · Naples, Italie</div><div class="conf-title">Asymptotic behavior and stability for a leukemia delay model of stem cells under treatment.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c12loc">Fév. 2018 · Turin, Italie</div><div class="conf-title">An impulsive model of chronic myeloid leukemia.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c13loc">Nov. 2017 · Errachidia, Maroc</div><div class="conf-title">Analyzing the stability of memes transmission model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c14loc">Avr.–Mai 2017 · Tlemcen, Algérie</div><div class="conf-title">Qualitative Behavior of Memes Transmission model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c15loc">Mars 2017 · Meknès, Maroc — SM2A2017</div><div class="conf-title">Existence of nontrivial periodic solutions and bifurcation for Leishmaniasis impulsive model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c16loc">Déc. 2016 · Constantine, Algérie</div><div class="conf-title">Predator-prey model with state dependent impulsive effects.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c17loc">Nov. 2016 · Batna, Algérie — CMA'2016</div><div class="conf-title">Stability and existence of nontrivial periodic solutions for an impulsively controlled zoonotic visceral leishmaniasis model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c18loc">Avr. 2016 · Béni-Mellal, Maroc — JANO'11</div><div class="conf-title">Mathematical model of memes transmission.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c19loc">Fév. 2016 · Ouargla, Algérie — RAMA10</div><div class="conf-title">Mathematical analysis of visceral leishmaniasis model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c20loc">Déc. 2015 · Marseille, France</div><div class="conf-title">Mathematical model of chronic myeloid leukemia.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c21loc">Nov. 2015 · Florence, Italie — DISVM'2015</div><div class="conf-title">Existence and solution sets of impulsive functional differential inclusions with multiple delay.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c22loc">Oct. 2015 · Annaba, Algérie — JIP'2015</div><div class="conf-title">Analysis of mathematical model of leukemia.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c23loc">Sept. 2014 · Sidi Bel Abbès, Algérie</div><div class="conf-title">Disease model incorporating the role of prions.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c24loc">Mai 2014 · Tlemcen, Algérie</div><div class="conf-title">Bifurcation of non trivial periodic solutions for pulsed chemotherapy model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c25loc">Déc. 2013 · Tlemcen, Algérie</div><div class="conf-title">Pulsed chemotherapy model.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c26loc">Sept. 2012 · Marrakech, Maroc — SM2A</div><div class="conf-title">A mathematical model including the role of prion protein into Alzheimer's disease.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c27loc">Sept. 2012 · Lyon, France</div><div class="conf-title">A mathematical model including the role of prion protein into Alzheimer's disease.</div></li>
+        <li class="conf-item"><div class="conf-loc" data-i18n="c28loc">Mai–Juin 2012 · Trieste, Italie — ICTP-ESF</div><div class="conf-title">A mathematical model including the role of prion protein into Alzheimer's disease.</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 17 C 180 2, 320 32, 500 17 S 820 2, 1080 17" /></svg>
+
+  <!-- ============ ENSEIGNEMENT ============ -->
+  <section id="enseignement">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k06">06 — Enseignement</p>
+        <h2 data-i18n="teach_h2">Matières enseignées (2007 – 2024)</h2>
+      </div>
+      <div class="teach-grid reveal">
+        <div>
+          <p class="tl-heading" data-i18n="grad_heading">Graduation (licence)</p>
+          <div class="tag-row">
+            <span class="tag" data-i18n="t1">Analyse</span><span class="tag" data-i18n="t2">Algèbre</span><span class="tag" data-i18n="t3">Analyse numérique</span>
+            <span class="tag" data-i18n="t4">Probabilités &amp; statistiques</span><span class="tag" data-i18n="t5">Théorie de la moyennisation</span>
+            <span class="tag" data-i18n="t6">Programmation Matlab</span><span class="tag">LaTeX</span>
+            <span class="tag" data-i18n="t7">Équations différentielles</span><span class="tag" data-i18n="t8">Équations différentielles fonctionnelles</span>
+            <span class="tag" data-i18n="t9">Théorie du contrôle</span><span class="tag" data-i18n="t10">Théorie de la bifurcation</span>
+            <span class="tag" data-i18n="t11">Biomathématiques</span><span class="tag" data-i18n="t12">Terminologie</span>
+          </div>
+        </div>
+        <div>
+          <p class="tl-heading" data-i18n="postgrad_heading">Post-graduation (doctorat)</p>
+          <div class="tag-row">
+            <span class="tag" data-i18n="t13">Théorie de la bifurcation</span><span class="tag" data-i18n="t14">Théorie du contrôle</span>
+            <span class="tag" data-i18n="t15">Biomathématiques</span><span class="tag" data-i18n="t16">Systèmes dynamiques</span>
+            <span class="tag" data-i18n="t17">Recherche bibliographique</span><span class="tag" data-i18n="t18">Anglais scientifique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path class="accent" d="M0 17 C 180 32, 320 2, 500 17 S 820 32, 1080 17" /></svg>
+
+  <!-- ============ RESPONSABILITÉS ============ -->
+  <section id="responsabilites">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k07">07 — Responsabilités</p>
+        <h2 data-i18n="resp_h2">Fonctions scientifiques &amp; administratives</h2>
+      </div>
+      <div class="two-col reveal">
+        <div>
+          <p class="tl-heading" data-i18n="sci_resp_heading">Responsabilités scientifiques</p>
+          <ul class="list-clean">
+            <li><div class="lc-top">2022 — 2025</div><div class="lc-main" data-i18n="sr1">Président du comité scientifique, Département de Mathématiques, USBA.</div></li>
+            <li><div class="lc-top">2016 — 2019 &amp; 2019 — 2022</div><div class="lc-main" data-i18n="sr2">Directeur du Laboratoire de Biomathématiques, USBA.</div></li>
+            <li><div class="lc-top">2016 — 2023</div><div class="lc-main" data-i18n="sr3">Responsable de l'équipe de recherche « Équations différentielles », Laboratoire de Biomathématiques.</div></li>
+            <li><div class="lc-top">2016 — 2019</div><div class="lc-main" data-i18n="sr4">Responsable du doctorat « Systèmes dynamiques et biomathématiques ».</div></li>
+            <li><div class="lc-top">2014 — 2025</div><div class="lc-main" data-i18n="sr5">Membre du Conseil scientifique, Faculté des Sciences Exactes, USBA.</div></li>
+            <li><div class="lc-top">2009–2011, 2014–2016, 2022–2025</div><div class="lc-main" data-i18n="sr6">Membre du comité scientifique, Département de Mathématiques, USBA.</div></li>
+          </ul>
+        </div>
+        <div>
+          <p class="tl-heading" data-i18n="admin_resp_heading">Responsabilités administratives</p>
+          <ul class="list-clean">
+            <li><div class="lc-top">2014 — 2016 &amp; 2019 — 2022</div><div class="lc-main" data-i18n="ar1">Chef du Département de Mathématiques, USBA.</div></li>
+            <li><div class="lc-top">2008 — 2011</div><div class="lc-main" data-i18n="ar2">Directeur-adjoint chargé de la pédagogie, Département de Mathématiques, USBA.</div></li>
+            <li><div class="lc-top">2013 — 2014</div><div class="lc-main" data-i18n="ar3">Directeur-adjoint chargé de la post-graduation, Département de Mathématiques, USBA.</div></li>
+          </ul>
+          <p class="tl-heading" style="margin-top:36px;" data-i18n="reviewer_heading">Relecteur pour des revues internationales</p>
+          <div class="rev-row">
+            <span>Asian Research Journal of Mathematics</span>
+            <span>PLOS ONE</span>
+            <span>Journal of Advances in Mathematics and Computer Science</span>
+            <span>Mathematical Modelling of Natural Phenomena</span>
+            <span>Journal of Applied Mathematics and Computing</span>
+            <span>International Journal of Applied and Computational Mathematics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 17 C 180 2, 320 32, 500 17 S 820 2, 1080 17" /></svg>
+
+  <!-- ============ CONTACT ============ -->
+  <footer class="site" id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker" data-i18n="k08">08 — Contact</p>
+        <h2 data-i18n="contact_h2">Prendre contact</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div>
+          <p style="color:var(--ink-soft); max-width:520px;" data-i18n="contact_text">Pour toute question relative à la recherche en biomathématiques, à l'encadrement doctoral, à une collaboration scientifique ou à une expertise éditoriale, n'hésitez pas à me contacter par courriel.</p>
+          <p class="footer-note" data-i18n="footer_note">© 2026 Mohamed Helal — Université Djillali Liabès de Sidi Bel Abbès.</p>
+          <p class="updated" data-i18n="updated_note">CV mis à jour — juillet 2026</p>
+        </div>
+        <div class="contact-card">
+          <dl>
+            <dt data-i18n="dt_addr">Adresse professionnelle</dt>
+            <dd data-i18n="dd_addr">Université Djillali Liabès de Sidi Bel Abbès<br>Faculté des Sciences Exactes<br>Département de Mathématiques<br>BP. 89, Sidi Bel Abbès 22000, Algérie</dd>
+            <dt data-i18n="dt_mail">Courriel</dt>
+            <dd><a href="mailto:mhelal_abbes@yahoo.fr">mhelal_abbes@yahoo.fr</a></dd>
+            <dt data-i18n="dt_tel">Téléphone</dt>
+            <dd>+213 540 259 306</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+// ---------- i18n dictionary ----------
+const I18N = {
+fr: {
+  meta_title: "Pr. Mohamed Helal — Mathématiques &amp; Biomathématiques",
+  meta_desc: "Page personnelle du Pr. Mohamed Helal, Professeur des Universités, Département de Mathématiques, Université Djillali Liabès de Sidi Bel Abbès.",
+  brand_sub: "Département de Mathématiques · USBA",
+  nav_about: "Profil", nav_parcours: "Parcours", nav_recherche: "Recherche", nav_pub: "Publications",
+  nav_encadrement: "Encadrement", nav_resp: "Responsabilités", nav_contact: "Contact",
+  hero_eyebrow: "Page personnelle — Enseignant-chercheur",
+  hero_role: "<strong>Professeur des Universités</strong> en mathématiques — Faculté des Sciences Exactes, Université Djillali Liabès de Sidi Bel Abbès, Algérie.",
+  hero_thesis: "« Comprendre le vivant à travers le langage des équations différentielles, des systèmes impulsifs et des modèles à retard. »",
+  hero_loc: "📍 Sidi Bel Abbès, Algérie",
+  k01: "01 — Profil",
+  about_h2: "Analyse non linéaire &amp; biomathématiques",
+  about_p1: "Le Pr. <strong>Mohamed Helal</strong> est Professeur des Universités au Département de Mathématiques de l'Université Djillali Liabès de Sidi Bel Abbès, où il enseigne et encadre la recherche depuis 2007. Ses travaux portent sur l'<strong>analyse qualitative des équations différentielles</strong> — ordinaires, fonctionnelles, fractionnaires et impulsives — appliquée aux phénomènes du vivant : dynamique des populations, épidémiologie, leucémie, maladie d'Alzheimer et interactions cultures-ravageurs.",
+  about_p2: "Titulaire d'un doctorat (2013) et d'une habilitation universitaire (2015) de l'Université de Sidi Bel Abbès, il a dirigé le <strong>Laboratoire de Biomathématiques</strong> de 2016 à 2022 et a encadré trois thèses de doctorat consacrées à la modélisation mathématique en biologie et en médecine.",
+  about_p3: "Auteur de plus d'une trentaine d'articles dans des revues internationales à comité de lecture et de nombreuses communications dans des congrès en Europe, en Afrique du Nord et en Turquie, il est également relecteur pour plusieurs revues scientifiques internationales.",
+  fields_kicker: "Domaines de recherche",
+  field1: "Équations différentielles non linéaires (EDO, EDP)",
+  field2: "Équations à retard &amp; systèmes impulsifs",
+  field3: "Dérivées d'ordre fractionnaire",
+  field4: "Systèmes dynamiques &amp; bifurcation",
+  field5: "Problèmes aux limites",
+  field6: "Biomathématiques &amp; dynamique des populations",
+  langs_kicker: "Langues", lang_ar: "Arabe", lang_fr: "Français", lang_en: "Anglais",
+  k02: "02 — Parcours",
+  parcours_h2: "Formation &amp; fonctions",
+  parcours_lede: "Un cheminement académique continu au sein de l'Université Djillali Liabès, de la licence à la chaire de professeur.",
+  formation_heading: "Formation",
+  edu1_title: "Habilitation universitaire", edu1_sub: "Université de Sidi Bel Abbès",
+  edu2_title: "Doctorat en mathématiques", edu2_sub: "« Contributions aux équations et inclusions différentielles et applications à des problèmes issus de la biologie cellulaire » — option analyse non linéaire",
+  edu3_title: "Magister en mathématiques", edu3_sub: "« Sur la moyennisation dans les équations différentielles ordinaires et fonctionnelles » — option modélisation mathématique",
+  edu4_title: "Diplôme d'études supérieures (D.E.S.)", edu4_sub: "Mathématiques, option probabilités et statistiques",
+  edu5_title: "Baccalauréat", edu5_sub: "Option sciences exactes",
+  fonctions_heading: "Fonctions académiques",
+  pos1_year: "2020 — présent", pos1_title: "Professeur des Universités",
+  pos2_title: "Maître de conférences A", pos3_title: "Maître assistant chargé de cours", pos4_title: "Maître assistant",
+  k03: "03 — Recherche", recherche_h2: "Projets de recherche",
+  proj1_tag: "2022 — 2025 · PRFU", proj1_title: "Modélisation et analyse mathématique des systèmes dynamiques en épidémiologie", proj1_desc: "Projet de recherche et de formation universitaire.",
+  proj2_tag: "2020 — 2022 · PHC Tassili", proj2_title: "Dynamique des insectes ravageurs dans le bassin méditerranéen", proj2_desc: "Coopération internationale franco-algérienne.",
+  proj3_tag: "2018 — 2021 · PRFU", proj3_title: "Modèles mathématiques des phénomènes du vivant", proj3_desc: "Projet de recherche et de formation universitaire.",
+  proj4_tag: "2015 — 2017 · Projet européen", proj4_title: "PAMELA — Prion et Alzheimer : modélisation et expérimentation d'une liaison agressive", proj4_desc: "Coopération de recherche européenne.",
+  proj5_tag: "2014 — 2017 · CNEPRU", proj5_title: "Modélisation mathématique et simulations numériques des phénomènes des sciences de la vie", proj5_desc: "Projet de recherche universitaire.",
+  proj6_tag: "2011 — 2013 · PNR", proj6_title: "Modélisation et simulation de la maladie à prion", proj6_desc: "Projet de recherche national.",
+  k04: "04 — Bibliographie", pub_h2: "Publications",
+  pub_lede: "34 articles de revues et 6 actes de conférence, de 2012 à 2026. Champ de recherche : « Search Bibliography » — utilisez le filtre ci-dessous comme le feraient vos propres étudiants.",
+  pub_search_ph: "Filtrer par mot-clé, auteur, revue ou année…",
+  proc_heading: "Actes de conférence — ITM Web of Conferences, vol. 4 (2015)",
+  pub_count_suffix: "articles",
+  k05: "05 — Encadrement doctoral", theses_h2: "Thèses dirigées",
+  thesis1_top: "2022 · Université de Sidi Bel Abbès", thesis1_main: "<strong>Yazid Bensid</strong> — Modèles mathématiques en biologie et médecine.",
+  thesis2_top: "2022 · Université de Sidi Bel Abbès", thesis2_main: "<strong>Youcef Belgaid</strong> — Contributions à l'étude de certains modèles mathématiques issus de la biologie et de la médecine.",
+  thesis3_top: "2021 · Université de Sidi Bel Abbès", thesis3_main: "<strong>Nawal Kherbouche</strong> — Contribution à certains modèles mathématiques de la dynamique de populations.",
+  events_heading: "Organisation d'événements scientifiques",
+  event1_top: "25–27 juin 2023 · Sidi Bel Abbès", event1_main: "Président du comité d'organisation — <em>International Biomathematic Modeling Days</em>.",
+  event2_top: "8 décembre 2022 · Sidi Bel Abbès", event2_main: "Membre du comité d'organisation — Journée scientifique sur la biomathématique.",
+  event3_top: "14–16 septembre 2014 · Sidi Bel Abbès", event3_main: "Membre du comité d'organisation — <em>Workshop on Mathematics for Life Sciences</em>.",
+  comm_kicker: "Communications", comm_h2: "Colloques &amp; conférences internationales",
+  comm_lede: "Plus de 25 communications orales et affichées, 2012 – 2023.",
+  c1loc:"Déc. 2023 · Sousse, Tunisie — ICAAM2023", c2loc:"Août 2023 · Paris, France — MICOPAM2023",
+  c3loc:"Déc. 2022 · Hammamet, Tunisie", c3title:"Dynamic behaviour for a delay leukemia model under treatment. (affiche)",
+  c4loc:"Sept. 2022 · Konya, Turquie — ICIAS2022", c5loc:"Juil. 2022 · Konya, Turquie — ICAENS2022",
+  c6loc:"Juin 2022 · Turin, Italie — MPDEE2022", c7loc:"Mai 2022 · Konya, Turquie — ICEANS2022",
+  c8loc:"Fév. 2021 · Trento, Italie — DSABNS2021", c8title:"Mathematical analysis for a time-delayed leukemia model with treatment. (affiche)",
+  c9loc:"Déc. 2019 · Meknès, Maroc — CIMAN2019",
+  c10loc:"Fév. 2019 · Tlemcen, Algérie — Colloque TAMTAM", c10title:"L'existence et la stabilité des états d'équilibres pour un modèle de la leucémie sous traitement et avec retard.",
+  c11loc:"Fév. 2019 · Naples, Italie", c12loc:"Fév. 2018 · Turin, Italie",
+  c13loc:"Nov. 2017 · Errachidia, Maroc", c14loc:"Avr.–Mai 2017 · Tlemcen, Algérie",
+  c15loc:"Mars 2017 · Meknès, Maroc — SM2A2017", c16loc:"Déc. 2016 · Constantine, Algérie",
+  c17loc:"Nov. 2016 · Batna, Algérie — CMA'2016", c18loc:"Avr. 2016 · Béni-Mellal, Maroc — JANO'11",
+  c19loc:"Fév. 2016 · Ouargla, Algérie — RAMA10", c20loc:"Déc. 2015 · Marseille, France",
+  c21loc:"Nov. 2015 · Florence, Italie — DISVM'2015", c22loc:"Oct. 2015 · Annaba, Algérie — JIP'2015",
+  c23loc:"Sept. 2014 · Sidi Bel Abbès, Algérie", c24loc:"Mai 2014 · Tlemcen, Algérie",
+  c25loc:"Déc. 2013 · Tlemcen, Algérie", c26loc:"Sept. 2012 · Marrakech, Maroc — SM2A",
+  c27loc:"Sept. 2012 · Lyon, France", c28loc:"Mai–Juin 2012 · Trieste, Italie — ICTP-ESF",
+  k06: "06 — Enseignement", teach_h2: "Matières enseignées (2007 – 2024)",
+  grad_heading: "Graduation (licence)", postgrad_heading: "Post-graduation (doctorat)",
+  t1:"Analyse", t2:"Algèbre", t3:"Analyse numérique", t4:"Probabilités &amp; statistiques", t5:"Théorie de la moyennisation",
+  t6:"Programmation Matlab", t7:"Équations différentielles", t8:"Équations différentielles fonctionnelles",
+  t9:"Théorie du contrôle", t10:"Théorie de la bifurcation", t11:"Biomathématiques", t12:"Terminologie",
+  t13:"Théorie de la bifurcation", t14:"Théorie du contrôle", t15:"Biomathématiques", t16:"Systèmes dynamiques",
+  t17:"Recherche bibliographique", t18:"Anglais scientifique",
+  k07: "07 — Responsabilités", resp_h2: "Fonctions scientifiques &amp; administratives",
+  sci_resp_heading: "Responsabilités scientifiques",
+  sr1: "Président du comité scientifique, Département de Mathématiques, USBA.",
+  sr2: "Directeur du Laboratoire de Biomathématiques, USBA.",
+  sr3: "Responsable de l'équipe de recherche « Équations différentielles », Laboratoire de Biomathématiques.",
+  sr4: "Responsable du doctorat « Systèmes dynamiques et biomathématiques ».",
+  sr5: "Membre du Conseil scientifique, Faculté des Sciences Exactes, USBA.",
+  sr6: "Membre du comité scientifique, Département de Mathématiques, USBA.",
+  admin_resp_heading: "Responsabilités administratives",
+  ar1: "Chef du Département de Mathématiques, USBA.",
+  ar2: "Directeur-adjoint chargé de la pédagogie, Département de Mathématiques, USBA.",
+  ar3: "Directeur-adjoint chargé de la post-graduation, Département de Mathématiques, USBA.",
+  reviewer_heading: "Relecteur pour des revues internationales",
+  k08: "08 — Contact", contact_h2: "Prendre contact",
+  contact_text: "Pour toute question relative à la recherche en biomathématiques, à l'encadrement doctoral, à une collaboration scientifique ou à une expertise éditoriale, n'hésitez pas à me contacter par courriel.",
+  footer_note: "© 2026 Mohamed Helal — Université Djillali Liabès de Sidi Bel Abbès.",
+  updated_note: "CV mis à jour — juillet 2026",
+  dt_addr: "Adresse professionnelle",
+  dd_addr: "Université Djillali Liabès de Sidi Bel Abbès<br>Faculté des Sciences Exactes<br>Département de Mathématiques<br>BP. 89, Sidi Bel Abbès 22000, Algérie",
+  dt_mail: "Courriel", dt_tel: "Téléphone"
+},
+en: {
+  meta_title: "Pr. Mohamed Helal — Mathematics &amp; Biomathematics",
+  meta_desc: "Personal page of Pr. Mohamed Helal, Full Professor, Department of Mathematics, Djillali Liabès University of Sidi Bel Abbès.",
+  brand_sub: "Department of Mathematics · USBA",
+  nav_about: "Profile", nav_parcours: "Career", nav_recherche: "Research", nav_pub: "Publications",
+  nav_encadrement: "Supervision", nav_resp: "Responsibilities", nav_contact: "Contact",
+  hero_eyebrow: "Personal page — Academic researcher",
+  hero_role: "<strong>Full Professor</strong> of Mathematics — Faculty of Exact Sciences, Djillali Liabès University of Sidi Bel Abbès, Algeria.",
+  hero_thesis: "“Reading the living world through the language of differential equations, impulsive systems and delay models.”",
+  hero_loc: "📍 Sidi Bel Abbès, Algeria",
+  k01: "01 — Profile",
+  about_h2: "Nonlinear analysis &amp; biomathematics",
+  about_p1: "Pr. <strong>Mohamed Helal</strong> is a Full Professor at the Department of Mathematics, Djillali Liabès University of Sidi Bel Abbès, where he has taught and supervised research since 2007. His work focuses on the <strong>qualitative analysis of differential equations</strong> — ordinary, functional, fractional and impulsive — applied to phenomena arising from the living world: population dynamics, epidemiology, leukemia, Alzheimer's disease and crop-pest interactions.",
+  about_p2: "Holder of a PhD (2013) and a Habilitation degree (2015) from the University of Sidi Bel Abbès, he directed the <strong>Laboratory of Biomathematics</strong> from 2016 to 2022 and has supervised three PhD theses on mathematical modeling in biology and medicine.",
+  about_p3: "Author of more than thirty articles in peer-reviewed international journals and numerous presentations at conferences across Europe, North Africa and Turkey, he also serves as a reviewer for several international scientific journals.",
+  fields_kicker: "Research fields",
+  field1: "Nonlinear differential equations (ODE, PDE)",
+  field2: "Delay equations &amp; impulsive systems",
+  field3: "Fractional-order derivatives",
+  field4: "Dynamical systems &amp; bifurcation",
+  field5: "Boundary value problems",
+  field6: "Mathematical biology &amp; population dynamics",
+  langs_kicker: "Languages", lang_ar: "Arabic", lang_fr: "French", lang_en: "English",
+  k02: "02 — Career",
+  parcours_h2: "Education &amp; positions",
+  parcours_lede: "A continuous academic path within Djillali Liabès University, from undergraduate studies to full professorship.",
+  formation_heading: "Education",
+  edu1_title: "Habilitation degree", edu1_sub: "University of Sidi Bel Abbès",
+  edu2_title: "PhD in Mathematics", edu2_sub: "“Contributions to Differential Equations and Inclusions and Applications to Problems Arising from Cellular Biology” — Nonlinear analysis",
+  edu3_title: "Magister in Mathematics", edu3_sub: "“On Averaging in Ordinary and Functional Differential Equations” — Mathematical modeling",
+  edu4_title: "Higher Studies Diploma (D.E.S.)", edu4_sub: "Mathematics, option: probability and statistics",
+  edu5_title: "Baccalaureate", edu5_sub: "Option: exact sciences",
+  fonctions_heading: "Academic positions",
+  pos1_year: "2020 — present", pos1_title: "Full Professor",
+  pos2_title: "Associate Professor", pos3_title: "Lecturer", pos4_title: "Assistant Professor",
+  k03: "03 — Research", recherche_h2: "Research projects",
+  proj1_tag: "2022 — 2025 · PRFU", proj1_title: "Modeling and mathematical analysis of dynamic systems in epidemiology", proj1_desc: "Research and University Training Project.",
+  proj2_tag: "2020 — 2022 · PHC Tassili", proj2_title: "Modeling the dynamics of insect pests in the Mediterranean Basin", proj2_desc: "French-Algerian international cooperation.",
+  proj3_tag: "2018 — 2021 · PRFU", proj3_title: "Mathematical models of the phenomena of life", proj3_desc: "Research and University Training Project.",
+  proj4_tag: "2015 — 2017 · European project", proj4_title: "PAMELA — Prion and Alzheimer: Modeling and Experimentation of an Aggressive Binding", proj4_desc: "European research cooperation.",
+  proj5_tag: "2014 — 2017 · CNEPRU", proj5_title: "Mathematical modeling and numerical simulations of life science phenomena", proj5_desc: "University research project.",
+  proj6_tag: "2011 — 2013 · PNR", proj6_title: "Modeling and simulation of prion disease", proj6_desc: "National research project.",
+  k04: "04 — Bibliography", pub_h2: "Publications",
+  pub_lede: "34 journal articles and 6 conference proceedings, from 2012 to 2026. Research field: “Search Bibliography” — try the filter below the way your own students would.",
+  pub_search_ph: "Filter by keyword, author, journal or year…",
+  proc_heading: "Conference proceedings — ITM Web of Conferences, vol. 4 (2015)",
+  pub_count_suffix: "articles",
+  k05: "05 — Doctoral supervision", theses_h2: "PhD theses supervised",
+  thesis1_top: "2022 · University of Sidi Bel Abbès", thesis1_main: "<strong>Yazid Bensid</strong> — Mathematical models in biology and medicine.",
+  thesis2_top: "2022 · University of Sidi Bel Abbès", thesis2_main: "<strong>Youcef Belgaid</strong> — Contributions to the study of mathematical models arising from biology and medicine.",
+  thesis3_top: "2021 · University of Sidi Bel Abbès", thesis3_main: "<strong>Nawal Kherbouche</strong> — Contribution to mathematical models of population dynamics.",
+  events_heading: "Organization of scientific events",
+  event1_top: "June 25–27, 2023 · Sidi Bel Abbès", event1_main: "President of the Organizing Committee — <em>International Biomathematic Modeling Days</em>.",
+  event2_top: "December 8, 2022 · Sidi Bel Abbès", event2_main: "Member of the Organizing Committee — Scientific day on biomathematics.",
+  event3_top: "September 14–16, 2014 · Sidi Bel Abbès", event3_main: "Member of the Organizing Committee — <em>Workshop on Mathematics for Life Sciences</em>.",
+  comm_kicker: "Talks", comm_h2: "International conferences &amp; colloquia",
+  comm_lede: "More than 25 oral and poster presentations, 2012 – 2023.",
+  c1loc:"Dec. 2023 · Sousse, Tunisia — ICAAM2023", c2loc:"Aug. 2023 · Paris, France — MICOPAM2023",
+  c3loc:"Dec. 2022 · Hammamet, Tunisia", c3title:"Dynamic behaviour for a delay leukemia model under treatment. (poster)",
+  c4loc:"Sept. 2022 · Konya, Turkey — ICIAS2022", c5loc:"Jul. 2022 · Konya, Turkey — ICAENS2022",
+  c6loc:"Jun. 2022 · Turin, Italy — MPDEE2022", c7loc:"May 2022 · Konya, Turkey — ICEANS2022",
+  c8loc:"Feb. 2021 · Trento, Italy — DSABNS2021", c8title:"Mathematical analysis for a time-delayed leukemia model with treatment. (poster)",
+  c9loc:"Dec. 2019 · Meknès, Morocco — CIMAN2019",
+  c10loc:"Feb. 2019 · Tlemcen, Algeria — TAMTAM Colloquium", c10title:"Existence and stability of equilibrium states for a leukemia model under treatment with delay.",
+  c11loc:"Feb. 2019 · Naples, Italy", c12loc:"Feb. 2018 · Turin, Italy",
+  c13loc:"Nov. 2017 · Errachidia, Morocco", c14loc:"Apr.–May 2017 · Tlemcen, Algeria",
+  c15loc:"Mar. 2017 · Meknès, Morocco — SM2A2017", c16loc:"Dec. 2016 · Constantine, Algeria",
+  c17loc:"Nov. 2016 · Batna, Algeria — CMA'2016", c18loc:"Apr. 2016 · Béni-Mellal, Morocco — JANO'11",
+  c19loc:"Feb. 2016 · Ouargla, Algeria — RAMA10", c20loc:"Dec. 2015 · Marseille, France",
+  c21loc:"Nov. 2015 · Florence, Italy — DISVM'2015", c22loc:"Oct. 2015 · Annaba, Algeria — JIP'2015",
+  c23loc:"Sept. 2014 · Sidi Bel Abbès, Algeria", c24loc:"May 2014 · Tlemcen, Algeria",
+  c25loc:"Dec. 2013 · Tlemcen, Algeria", c26loc:"Sept. 2012 · Marrakech, Morocco — SM2A",
+  c27loc:"Sept. 2012 · Lyon, France", c28loc:"May–Jun. 2012 · Trieste, Italy — ICTP-ESF",
+  k06: "06 — Teaching", teach_h2: "Courses taught (2007 – 2024)",
+  grad_heading: "Undergraduate level", postgrad_heading: "Postgraduate level",
+  t1:"Analysis", t2:"Algebra", t3:"Numerical analysis", t4:"Probability &amp; statistics", t5:"Averaging theory",
+  t6:"Matlab programming", t7:"Differential equations", t8:"Functional differential equations",
+  t9:"Control theory", t10:"Bifurcation theory", t11:"Biomathematics", t12:"Terminology",
+  t13:"Bifurcation theory", t14:"Control theory", t15:"Biomathematics", t16:"Dynamical systems",
+  t17:"Search bibliography", t18:"Scientific English",
+  k07: "07 — Responsibilities", resp_h2: "Scientific &amp; administrative responsibilities",
+  sci_resp_heading: "Scientific responsibilities",
+  sr1: "President of the Scientific Committee, Department of Mathematics, USBA.",
+  sr2: "Director of the Laboratory of Biomathematics, USBA.",
+  sr3: "Head of the research team “Differential Equations”, Laboratory of Biomathematics.",
+  sr4: "In charge of the doctorate “Dynamical Systems and Biomathematics”.",
+  sr5: "Member of the Scientific Council, Faculty of Exact Sciences, USBA.",
+  sr6: "Member of the Scientific Committee, Department of Mathematics, USBA.",
+  admin_resp_heading: "Administrative responsibilities",
+  ar1: "Head of the Department of Mathematics, USBA.",
+  ar2: "Assistant-Director in charge of pedagogy, Department of Mathematics, USBA.",
+  ar3: "Assistant-Director in charge of postgraduate studies, Department of Mathematics, USBA.",
+  reviewer_heading: "Reviewer for international journals",
+  k08: "08 — Contact", contact_h2: "Get in touch",
+  contact_text: "For any question related to research in biomathematics, doctoral supervision, scientific collaboration or editorial expertise, feel free to reach out by email.",
+  footer_note: "© 2026 Mohamed Helal — Djillali Liabès University of Sidi Bel Abbès.",
+  updated_note: "CV last updated — July 2026",
+  dt_addr: "Professional address",
+  dd_addr: "Djillali Liabès University of Sidi Bel Abbès<br>Faculty of Exact Sciences<br>Department of Mathematics<br>BP. 89, Sidi Bel Abbès 22000, Algeria",
+  dt_mail: "Email", dt_tel: "Phone"
+}
+};
+
+let currentLang = localStorage.getItem('helal_lang') || 'fr';
+
+function applyTranslations(lang){
+  const dict = I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(!dict[key]) return;
+    if(el.hasAttribute('data-i18n-attr')){
+      const attr = el.getAttribute('data-i18n-attr');
+      el.setAttribute(attr, dict[key]);
+    } else {
+      el.innerHTML = dict[key];
+    }
+  });
+  document.title = dict.meta_title.replace('&amp;','&');
+  document.documentElement.lang = lang;
+  document.getElementById('btnFr').classList.toggle('active', lang==='fr');
+  document.getElementById('btnEn').classList.toggle('active', lang==='en');
+}
+
+function setLang(lang){
+  currentLang = lang;
+  localStorage.setItem('helal_lang', lang);
+  applyTranslations(lang);
+  renderPubs(document.getElementById('pubSearch').value);
+}
+
+// ---------- Publications data ----------
+const publications = [
+  {y:2026, t:"The impact of early diagnostic tests in controlling COVID-19", a:"S. E. Bessayeh, N. Helal, M. Helal, A. Lakmeche", j:"Journal of Applied Mathematics and Computing, 72:123", doi:"https://doi.org/10.1007/s12190-026-02777-0"},
+  {y:2026, t:"Asymptotic Properties of an Age-Structured Model of Heroin Transmission", a:"K. Yahiaoui, I. H. Zirar, N. Helal, A. Lakmeche, T. M. Touaoula, M. Helal, Y. Bensid", j:"Mathematical Methods in the Applied Sciences", doi:"https://doi.org/10.1002/mma.70457"},
+  {y:2026, t:"A Mathematical Model Describing Interactions Between Oligomers, Prion Proteins, and Ca²⁺", a:"Y. Bensid, N. Helal, A. Lakmeche, M. Helal", j:"Mathematical Methods in the Applied Sciences", doi:"https://doi.org/10.1002/mma.70378"},
+  {y:2025, t:"A delay mathematical model for the dynamics of olive trees infected by Xylella fastidiosa", a:"M. E. A. Kissi, A. Lakmeche, A. Halanay, B. Ainseba, M. Bouizem, M. Helal", j:"U.P.B. Sci. Bull., Series A, 87(4):31–44", doi:"https://www.scientificbulletin.upb.ro/rev_docs_arhiva/rez714_322970.pdf"},
+  {y:2025, t:"A model for the interactions of wild boars and park rangers", a:"Y. Belgaid, M. Helal, A. Lakmeche, E. Venturino", j:"Mathematical Biosciences and Engineering, 22(11):2780–2806", doi:"https://doi.org/10.3934/mbe.2025102"},
+  {y:2025, t:"Hybrid mathematical model of leukemic diseases with resistance", a:"S. Moulay, A. Oumansour, M. Y. Zettam, N. Helal, G. Djellouli, A. Lakmeche, M. Helal", j:"Journal of Computational Analysis and Applications, 34(5):13–37"},
+  {y:2025, t:"Prey predator model with mixed predator behavior and a safe region for prey", a:"Y. Bensid, N. Helal, M. Helal, A. Lakmeche", j:"Journal of Computational Analysis and Applications, 34(4):1080–1093"},
+  {y:2025, t:"Fractional order predator-prey model", a:"F. Charif, N. Helal, A. Lakmeche, M. Helal", j:"Journal of Computational Analysis and Applications, 34(4):1036–1052"},
+  {y:2025, t:"Stochastic analysis of COVID-19 epidemic model", a:"S. E. Bessayeh, N. Helal, M. Helal, A. Lakmeche, K. Yahiaou", j:"Journal of Computational Analysis and Applications, 34(4):872–895"},
+  {y:2024, t:"Local and global stability of fractional SAIRS models", a:"N. Zine, B. Bayour, N. Helal, M. Helal", j:"Nonlinear Studies, 31(3):839–855"},
+  {y:2023, t:"A dynamic model of interactions between tumor growth and the immune response", a:"Z. Kaid, A. Lakmeche, J. Clairambault, M. Helal", j:"Nonlinear Studies, 30(3):1–23"},
+  {y:2023, t:"Study of a crop-pest-natural enemy model with Z-type control — an approach to pest management", a:"D. S. Mandal, S. Samanta, R. D. Parshad, A. Chekroun, M. Helal, J. Chattopadhyay", j:"International Journal of Biomathematics, 16(4):2250099"},
+  {y:2023, t:"Bifurcation of nonlinear impulsive boundary value problems", a:"Z. Belattar, A. Lakmeche, M. Helal", j:"Turkish Journal of Computer and Mathematics Education, 14(1):60–77"},
+  {y:2022, t:"A mathematical study of a crop-pest model with the Caputo fractional-order derivative", a:"A. Chekroun, M. Helal, D. S. Mandal, A. Lakmeche, E. A. Miloudi", j:"Nonlinear Studies, 29(4):1131–1146"},
+  {y:2022, t:"A dynamic model of chronic myeloid leukemia with delay", a:"I. Younes, M. Helal, A. Lakmeche", j:"Turkish Journal of Computer and Mathematics Education, 13(3):537–547"},
+  {y:2022, t:"Mathematical analysis for a time delayed Alzheimer disease model", a:"Y. Bensid, M. Helal, A. Lakmeche", j:"Advances in Mathematics: Scientific Journal, 11(3):173–195"},
+  {y:2021, t:"A mathematical study of a coronavirus model with the Caputo fractional-order derivative", a:"Y. Belgaid, M. Helal, A. Lakmeche, E. Venturino", j:"Fractal and Fractional, 5:87, 1–23"},
+  {y:2020, t:"On the stability of periodic solutions of an impulsive system arising in the control of agroecosystems", a:"Y. Belgaid, M. Helal, A. Lakmeche, E. Venturino", j:"International Symposium on Mathematical & Computational Biology, 183–199"},
+  {y:2020, t:"The role of the net reproduction rates on the persistence of the leukemia with resistance", a:"M. Bouizem, M. Helal, B. Ainseba, A. Lakmeche", j:"Nonlinear Studies, 27(3):753–781"},
+  {y:2020, t:"Stability analysis of delay mathematical model of leukemia", a:"N. Bouizem, M. Helal, N. Kherbouche, A. Lakmeche", j:"C.A.N.A., 27(3):25–57"},
+  {y:2020, t:"Mathematical analysis and global dynamics for a time-delayed chronic myeloid leukemia model with treatment", a:"N. Kherbouche, M. Helal, A. Chekroun, A. Lakmeche", j:"Mathematical Modelling of Natural Phenomena, 15:68, 1–23"},
+  {y:2020, t:"Analysis of a model for corona virus spread", a:"Y. Belgaid, M. Helal, E. Venturino", j:"Journal of Mathematics, 8(5):1–30"},
+  {y:2019, t:"Mathematical analysis of a B cell chronic lymphocytic leukemia model with immune response", a:"Y. Belgaid, M. Helal, E. Venturino", j:"Applied Mathematics and Nonlinear Sciences, 4(2):551–558"},
+  {y:2019, t:"Chronic myeloid leukemia model with periodic pulsed treatment", a:"M. Helal, A. Lakmeche, F. Souna", j:"ARIMA Journal, 30:123–144"},
+  {y:2019, t:"Stability analysis of a steady state of a model describing Alzheimer's disease and interactions with prion proteins", a:"M. Helal, A. Igel-Egalon, A. Lakmeche, P. Mazzocco, A. Perrillat-Mercerot, L. Pujo-Menjouet, H. Rezaei, L. M. Tine", j:"Journal of Mathematical Biology, 78(1–2):57–81"},
+  {y:2018, t:"Existence and stability of steady states for a delay model of stem cells in leukemia under treatment", a:"I. Younes, M. Helal, A. Lakmeche", j:"Communications in Applied Nonlinear Analysis, 25(1):66–80"},
+  {y:2017, t:"Bifurcation of nontrivial periodic solutions for Leishmaniasis disease model", a:"F. Boukhalfa, M. Helal, A. Lakmeche", j:"Facta Universitatis, Series Mathematics & Informatics, 32(5):583–628"},
+  {y:2017, t:"Mathematical analysis of visceral leishmaniasis model", a:"F. Boukhalfa, M. Helal, A. Lakmeche", j:"Research in Applied Mathematics, 1:1–16"},
+  {y:2016, t:"Chemotherapeutic treatment models by drugs with instantaneous effects", a:"F. Charif, M. Helal, A. Lakmeche", j:"Communications in Applied Nonlinear Analysis, 24(3):1–24"},
+  {y:2016, t:"Chemotherapy models", a:"F. Charif, M. Helal, A. Lakmeche", j:"ARIMA, 23:115–124"},
+  {y:2014, t:"Alzheimer's disease: analysis of a mathematical model incorporating the role of prions", a:"M. Helal, E. Hingant, L. Pujo-Menjouet, G. F. Webb", j:"Journal of Mathematical Biology, 69:1207–1235"},
+  {y:2014, t:"Bifurcation of nontrivial periodic solutions for pulsed chemotherapy model", a:"A. Boudermine, M. Helal, A. Lakmeche", j:"Mathematical Sciences and Applications E-Notes, 2(2):22–44"},
+  {y:2014, t:"Pulsed chemotherapy model", a:"Ah. Lakmeche, M. Helal, A. Lakmeche", j:"Electronic Journal of Mathematical Analysis and Applications, 2(1):127–148"},
+  {y:2012, t:"Existence and solution sets of impulsive functional differential inclusions with multiple delay", a:"M. Helal, A. Ouahab", j:"Opuscula Mathematica, 32(2):249–283"}
+];
+
+const proceedings = [
+  {t:"Mathematical model for pulsed chemotherapy", a:"Ah. Lakmeche, M. Helal, A. Lakmeche", j:"ITM Web of Conferences 4, 01004, 1–11"},
+  {t:"Analysis of mathematical model of leukemia", a:"M. Helal, M. Adimy, A. Lakmeche, L. Pujo-Menjouet", j:"ITM Web of Conferences 4, 01005, 1–14"},
+  {t:"Leukemia mathematical model", a:"N. Bouizem, M. Helal, B. E. Ainseba, A. Lakmeche", j:"ITM Web of Conferences 4, 01006, 1–13"},
+  {t:"Visceral leishmania model", a:"F. Boukhalfa, M. Helal, A. Lakmeche", j:"ITM Web of Conferences 4, 01007, 1–7"},
+  {t:"Impulsive predator-prey model", a:"F. Charif, M. Helal, A. Lakmeche", j:"ITM Web of Conferences 4, 01008, 1–10"},
+  {t:"Impulsive prion disease model", a:"A. Lakmeche, M. Helal, I. Mammar, A. Ouahab", j:"ITM Web of Conferences 4, 01009, 1–8"}
+];
+
+function renderPubs(filter){
+  const list = document.getElementById('pubList');
+  const q = (filter || '').trim().toLowerCase();
+  const linkWord = currentLang === 'fr' ? 'lien' : 'link';
+  const byYear = {};
+  publications.forEach(p=>{ (byYear[p.y] = byYear[p.y] || []).push(p); });
+  const years = Object.keys(byYear).sort((a,b)=>b-a);
+  let html = '';
+  let shown = 0;
+  years.forEach(y=>{
+    const items = byYear[y];
+    let groupHtml = '';
+    items.forEach(p=>{
+      const hay = (p.t+' '+p.a+' '+p.j+' '+p.y).toLowerCase();
+      const match = !q || hay.includes(q);
+      if(match) shown++;
+      groupHtml += `<div class="pub-item ${match?'':'hidden'}">
+        <div class="pt"><span class="py">${p.y}</span>${p.t}</div>
+        <div class="pa">${p.a}</div>
+        <div class="pj">${p.j}${p.doi ? ` — <a href="${p.doi}" target="_blank" rel="noopener">${linkWord}</a>` : ''}</div>
+      </div>`;
+    });
+    html += `<div class="pub-year-group"><div class="pub-year-label">${y}</div>${groupHtml}</div>`;
+  });
+  list.innerHTML = html;
+  document.getElementById('pubCount').textContent = shown + ' / ' + publications.length + ' ' + I18N[currentLang].pub_count_suffix;
+
+  // proceedings visibility follows filter too
+  const procList = document.getElementById('procList');
+  let procShown = 0;
+  let procHtml = '';
+  proceedings.forEach(p=>{
+    const hay = (p.t+' '+p.a+' '+p.j).toLowerCase();
+    const match = !q || hay.includes(q);
+    if(match) procShown++;
+    procHtml += `<li class="${match?'':'hidden'}"><div class="lc-top">${p.j}</div><div class="lc-main"><strong>${p.t}</strong> — ${p.a}</div></li>`;
+  });
+  procList.innerHTML = procHtml;
+  document.getElementById('procNote').style.display = (procShown===0 && q) ? 'none' : 'block';
+}
+
+applyTranslations(currentLang);
+renderPubs('');
+document.getElementById('pubSearch').addEventListener('input', e=> renderPubs(e.target.value));
+
+// ---------- scroll reveal ----------
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+</script>
+
+</body>
+</html>
